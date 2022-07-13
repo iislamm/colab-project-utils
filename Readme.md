@@ -1,6 +1,6 @@
 # Colab Project Utils
 
-Utility class to help you save your colab project files in your Google Drive account and fetch them back when you continue working on you project.
+Utility package to help you save your colab project files in your Google Drive account and fetch them back when you continue working on you project.
 
 The goal of this project is to save you time while working on complex projects using Colab.
 
