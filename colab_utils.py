@@ -109,7 +109,7 @@ class ColabUtils:
         ]
 
         if len(files):
-            self.__copy_files(files, self.__project_path)
+            self.__copy_files(files, self.__project_path, override=True)
 
         print(f"Saved project {self.project_name} at {self.__project_path}")
 
