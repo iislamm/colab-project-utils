@@ -78,7 +78,10 @@ class ColabUtils:
             # check if the file exists
             if os.path.exists(os.path.join(dest, filename)):
                 continue
-            shutil.copy(f, os.path.join(dest, filename))
+            if os.path.isdir(f):
+                shutil.copytree(f, os.path.join(dest, filename))
+            else:
+                shutil.copy(f, os.path.join(dest, filename))
 
     def save_project(self, ignore_files: list = None):
         """
