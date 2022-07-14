@@ -69,7 +69,7 @@ class ColabUtils:
         ):
             return True
 
-    def __copy_files(self, files: list, dest: str):
+    def __copy_files(self, files: list, dest: str, override: bool = False):
         """
         Copies the files to the destination.
         """
@@ -77,7 +77,10 @@ class ColabUtils:
             filename = os.path.basename(f)
             # check if the file exists
             if os.path.exists(os.path.join(dest, filename)):
-                continue
+                if override:
+                    os.remove(os.path.join(dest, filename))
+                else:
+                    continue
             if os.path.isdir(f):
                 shutil.copytree(f, os.path.join(dest, filename))
             else:
